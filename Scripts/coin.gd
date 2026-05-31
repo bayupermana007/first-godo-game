@@ -2,5 +2,6 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-    print("Coin collected!")
-    queue_free()
+    if body.is_in_group("Player"):
+        print("Coin collected!")
+        queue_free()
